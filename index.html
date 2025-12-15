@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium Aluminum Works &amp; Supplies</title>
   <script src="/_sdk/element_sdk.js"></script>
+  
   <style>
     * {
       margin: 0;
@@ -1008,6 +1009,1312 @@ backdrop-filter: blur(10px);
       <div class="social-links"><a href="https://www.facebook.com/wizzydeveloper/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img class="media_icon" src="img/facebook_icon.png" alt=""></a>
         
         <a href="https://wa.link/d4zimx" target="_blank" rel="noopener noreferrer" aria-label="whatsapp"><img class="media_icon" src="img/whatsapp-icon.png" alt="whatsapp image"></a> 
+      
+      </div>
+     </div>
+     <div class="footer-section">
+      <h4>Quick Links</h4>
+      <p><a href="#home" style="color: #cbd5e0; text-decoration: none;">Home</a></p>
+      <p><a href="#about" style="color: #cbd5e0; text-decoration: none;">About Us</a></p>
+      <p><a href="#services" style="color: #cbd5e0; text-decoration: none;">Services</a></p>
+      <p><a href="#contact" style="color: #cbd5e0; text-decoration: none;">Contact</a></p>
+     </div>
+     <div class="footer-section">
+      <h4>Services</h4>
+      <p>Custom Fabrication</p>
+      <p>Windows &amp; Doors</p>
+      <p>Commercial Projects</p>
+      <p>Aluminum Supplies</p>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <p id="footer-text">© 2024 Premium Aluminum Works. All Rights Reserved.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      company_name: "Premium Aluminum Works",
+      tagline: "Quality Craftsmanship Since 2015",
+      hero_title: "Expert Aluminum Solutions for Every Project",
+      hero_subtitle: "From custom fabrication to premium supplies, we deliver excellence in aluminum craftsmanship",
+      about_title: "Leading Aluminum Specialists",
+      about_description: "With over 25 years of experience, we are your trusted partner for all aluminum needs. From architectural projects to custom fabrication, our skilled team delivers superior quality and precision in every project we undertake.",
+      services_title: "Our Professional Services",
+      contact_title: "Get In Touch",
+      shop_address: "Gassol lga Mutum Biyu Old Orange market, Taraba state.",
+      phone_number: "+234 814 258 8852",
+      email_address: "info@aluminumworks.com",
+      whatsapp_number: "15551234567",
+      footer_text: "© 2024 Premium Aluminum Works. All Rights Reserved.",
+      primary_color: "#667eea",
+      secondary_color: "#764ba2",
+      background_color: "#f7fafc",
+      text_color: "#2d3748",
+      accent_color: "#4a5568"
+    };
+
+    async function onConfigChange(config) {
+      document.getElementById('company-name').textContent = config.company_name || defaultConfig.company_name;
+      document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
+      document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+      document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+      document.getElementById('about-description').textContent = config.about_description || defaultConfig.about_description;
+      document.getElementById('services-title').textContent = config.services_title || defaultConfig.services_title;
+      document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+      document.getElementById('shop-address').textContent = config.shop_address || defaultConfig.shop_address;
+      document.getElementById('phone-number').textContent = config.phone_number || defaultConfig.phone_number;
+      document.getElementById('email-address').textContent = config.email_address || defaultConfig.email_address;
+      
+      const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
+      const whatsappLink = document.getElementById('whatsapp-link');
+      whatsappLink.href = `https://wa.me/${whatsappNumber}`;
+      
+      document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+
+      document.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.style.background = primaryColor;
+      });
+
+      document.querySelectorAll('.logo-placeholder, .about-image, .gallery-item').forEach(el => {
+        el.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+      });
+
+      document.querySelectorAll('.services, .contact').forEach(section => {
+        section.style.background = backgroundColor;
+      });
+
+      document.querySelectorAll('.section-title, .about-content h3, .contact-info h4, h1').forEach(heading => {
+        heading.style.color = textColor;
+      });
+
+      document.querySelectorAll('.social-links a').forEach(link => {
+        link.style.background = accentColor;
+      });
+
+      document.querySelectorAll('.stat-item h4, .info-icon').forEach(el => {
+        el.style.color = primaryColor;
+      });
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.secondary_color = value;
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              if (window.elementSdk) {
+                window.elementSdk.config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["company_name", config.company_name || defaultConfig.company_name],
+        ["tagline", config.tagline || defaultConfig.tagline],
+        ["hero_title", config.hero_title || defaultConfig.hero_title],
+        ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+        ["about_title", config.about_title || defaultConfig.about_title],
+        ["about_description", config.about_description || defaultConfig.about_description],
+        ["services_title", config.services_title || defaultConfig.services_title],
+        ["contact_title", config.contact_title || defaultConfig.contact_title],
+        ["shop_address", config.shop_address || defaultConfig.shop_address],
+        ["phone_number", config.phone_number || defaultConfig.phone_number],
+        ["email_address", config.email_address || defaultConfig.email_address],
+        ["whatsapp_number", config.whatsapp_number || defaultConfig.whatsapp_number],
+        ["footer_text", config.footer_text || defaultConfig.footer_text]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    // Hero Slider Functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    const totalSlides = slides.length;
+    let autoplayInterval;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      showSlide(currentSlide);
+    }
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(nextSlide, 2000);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+
+    // Event listeners for slider controls
+    document.querySelector('.slider-next').addEventListener('click', () => {
+      nextSlide();
+      stopAutoplay();
+      startAutoplay();
+    });
+
+    document.querySelector('.slider-prev').addEventListener('click', () => {
+      prevSlide();
+      stopAutoplay();
+      startAutoplay();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+        stopAutoplay();
+        startAutoplay();
+      });
+    });
+
+    // Start autoplay
+    startAutoplay();
+
+    // Pause autoplay on hover
+    document.querySelector('.hero').addEventListener('mouseenter', stopAutoplay);
+    document.querySelector('.hero').addEventListener('mouseleave', startAutoplay);
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+      };
+
+      formMessage.style.display = 'block';
+      formMessage.className = 'form-message success';
+      formMessage.textContent = 'Thank you for your message! We will get back to you within 24 hours.';
+
+      contactForm.reset();
+
+      setTimeout(() => {
+        formMessage.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9acc9191104d438f',t:'MTc2NTUzNTY1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html><!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Aluminum Works &amp; Supplies</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    .main-wrapper {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: rgba(255, 255, 255, 0.98);
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-placeholder {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      font-weight: bold;
+    }
+
+    .logo-img {
+      border-radius: 100%;
+    }
+
+    .brand-text h1 {
+      font-size: 1.5rem;
+      color: #2d3748;
+      margin-bottom: 0.2rem;
+    }
+
+    .brand-text p {
+      font-size: 0.85rem;
+      color: #718096;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: #2d3748;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding: 0.5rem 1rem;
+    }
+
+    .nav-menu a:hover {
+      color: #667eea;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #2d3748;
+    }
+
+    /* Hero Section with Slider */
+    .hero {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 5%;
+      overflow: hidden;
+    }
+
+    .hero-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    .hero-slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: rgba(125, 129, 138, 0.7); */
+      z-index: 1;
+    }
+
+    .hero-slide img {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(
+  rgba(255, 255, 255, 0.15),
+  rgba(0, 102, 204, 0.25)
+);
+backdrop-filter: blur(10px);
+
+
+    }
+
+
+   .slide-1 {
+      background: linear-gradient(rgba(45, 55, 72, 0.5), rgba(45, 55, 72, 0.5)),
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23667eea;stop-opacity:0.3" /><stop offset="100%" style="stop-color:%23764ba2;stop-opacity:0.3" /></linearGradient></defs><rect width="1200" height="800" fill="%23e8e8e8"/><rect x="100" y="150" width="300" height="400" fill="url(%23grad1)" rx="15"/><rect x="500" y="100" width="250" height="500" fill="%23c0c0c0" opacity="0.4" rx="15"/><rect x="850" y="200" width="280" height="350" fill="url(%23grad1)" rx="15"/><circle cx="250" cy="350" r="120" fill="%23a0a0a0" opacity="0.3"/><circle cx="950" cy="400" r="80" fill="%23a0a0a0" opacity="0.3"/></svg>');
+      background-size: cover;
+    }
+
+    .slide-2 {
+      background: linear-gradient(rgba(45, 55, 72, 0.5), rgba(45, 55, 72, 0.5)),
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="grid2" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%23d0d0d0" stroke-width="2"/></pattern></defs><rect width="1200" height="800" fill="%23f0f0f0"/><rect width="1200" height="800" fill="url(%23grid2)"/><rect x="200" y="250" width="350" height="300" fill="%23667eea" opacity="0.3" rx="20"/><rect x="650" y="150" width="400" height="450" fill="%23764ba2" opacity="0.3" rx="20"/><circle cx="350" cy="400" r="100" fill="%23b0b0b0" opacity="0.4"/><circle cx="900" cy="350" r="130" fill="%23b0b0b0" opacity="0.4"/></svg>');
+      background-size: cover;
+    }
+
+    .slide-3 {
+      background: linear-gradient(rgba(45, 55, 72, 0.5), rgba(45, 55, 72, 0.5)),
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%23dcdcdc"/><rect x="150" y="100" width="400" height="550" fill="%23667eea" opacity="0.35" rx="25" transform="rotate(-5 350 375)"/><rect x="650" y="150" width="450" height="500" fill="%23764ba2" opacity="0.35" rx="25" transform="rotate(5 875 400)"/><circle cx="300" cy="300" r="150" fill="%23a8a8a8" opacity="0.3"/><circle cx="900" cy="450" r="120" fill="%23a8a8a8" opacity="0.3"/><rect x="400" y="600" width="400" height="120" fill="%23c0c0c0" opacity="0.3" rx="15"/></svg>');
+      background-size: cover;
+    }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .slider-dot.active {
+      background: white;
+      transform: scale(1.2);
+      border-color: rgba(102, 126, 234, 0.5);
+    }
+
+    .slider-arrows {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .slider-arrow {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1.5rem;
+      color: white;
+      pointer-events: all;
+      backdrop-filter: blur(5px);
+    }
+
+    .slider-arrow:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      color: white;
+      z-index: 1;
+      position: relative;
+    }
+
+    .hero-content h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero-content p {
+      font-size: 1.4rem;
+      margin-bottom: 2.5rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #667eea;
+    }
+
+    .btn-secondary:hover {
+      background: #f7fafc;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* About Section */
+    .about {
+      padding: 5rem 5%;
+      background: white;
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-content h3 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #2d3748;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      color: #4a5568;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 400px;
+      /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: #f7fafc;
+      border-radius: 10px;
+    }
+
+    .stat-item h4 {
+      font-size: 2.5rem;
+      color: #667eea;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item p {
+      color: #4a5568;
+      font-size: 0.95rem;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 5rem 5%;
+      background: #f7fafc;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #2d3748;
+    }
+
+    .services-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #2d3748;
+    }
+
+    .service-card p {
+      color: #4a5568;
+      line-height: 1.7;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      padding: 5rem 5%;
+      background: white;
+    }
+
+    .gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      height: 300px;
+      /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover::before {
+      opacity: 1;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 5rem 5%;
+      background: #f7fafc;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info {
+      background: white;
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h4 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: #2d3748;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      gap: 1rem;
+    }
+
+    .info-icon {
+      font-size: 1.8rem;
+      color: #667eea;
+      min-width: 40px;
+    }
+
+    .info-text h5 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #2d3748;
+    }
+
+    .info-text p {
+      color: #4a5568;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #2d3748;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .form-message {
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      display: none;
+      font-weight: 500;
+    }
+
+    .form-message.success {
+      background: #c6f6d5;
+      color: #22543d;
+      border: 1px solid #9ae6b4;
+    }
+
+    .form-message.error {
+      background: #fed7d7;
+      color: #742a2a;
+      border: 1px solid #fc8181;
+    }
+
+    /* Footer */
+    footer {
+      background: #2d3748;
+      color: white;
+      padding: 3rem 5%;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-section p {
+      color: #cbd5e0;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      background: #4a5568;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+    }
+    
+    .media_icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+    
+
+    .social-links a:hover {
+      background: #667eea;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #4a5568;
+      color: #cbd5e0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 0;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        padding: 1rem;
+        border-bottom: 1px solid #e2e8f0;
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-content h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+
+      .about-container,
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .slider-arrows {
+        padding: 0 1rem;
+      }
+
+      .slider-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .navbar {
+        padding: 1rem 3%;
+      }
+
+      .hero {
+        min-height: 500px;
+        padding: 3rem 3%;
+      }
+
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .about,
+      .services,
+      .gallery,
+      .contact {
+        padding: 3rem 3%;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="main-wrapper"><!-- Navigation -->
+   <nav class="navbar">
+    <div class="logo-section">
+     <div class="logo-placeholder" id="logo-placeholder">
+      <img class="logo-img" src="img/Aluminum-logo1.jpg" alt="">
+     </div>
+     <div class="brand-text">
+      <h1 id="company-name">Premium Aluminum Works</h1>
+      <p id="tagline">Quality Craftsmanship Since 2015</p>
+     </div>
+    </div><button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu">☰</button>
+    <ul class="nav-menu" id="nav-menu">
+     <li><a href="#home">Home</a></li>
+     <li><a href="#about">About</a></li>
+     <li><a href="#services">Services</a></li>
+     <li><a href="#gallery">Gallery</a></li>
+     <li><a href="#contact">Contact</a></li>
+    </ul>
+   </nav><!-- Hero Section with Slider -->
+   <section class="hero" id="home">
+
+
+    <div class="hero-slider" role="region" aria-label="Hero slider">
+  <div class="hero-slide active" role="group" aria-roledescription="slide" aria-label="Slide 1">
+    <img class="hero-img" src="img/Aluminum_img.jpg"
+         alt="Custom aluminum door installed on modern home"
+         loading="eager">
+  </div>
+
+  <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 2">
+    <img src="img/Aluminum12_img.jpg"
+         alt="Aluminum curtain wall on a commercial building"
+         loading="lazy">
+  </div>
+
+  <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 3">
+    <img src="img/Aluminum13_img.jpg"
+         alt="Custom aluminum railing on a balcony"
+         loading="lazy">
+  </div>
+</div>
+
+
+
+    <div class="slider-arrows"><button class="slider-arrow slider-prev" aria-label="Previous slide">‹</button> <button class="slider-arrow slider-next" aria-label="Next slide">›</button>
+    </div>
+    <div class="slider-dots"><span class="slider-dot active" data-slide="0"></span> <span class="slider-dot" data-slide="1"></span> <span class="slider-dot" data-slide="2"></span>
+    </div>
+    <div class="hero-content">
+     <h2 id="hero-title">Expert Aluminum Solutions for Every Project</h2>
+     <p id="hero-subtitle">From custom fabrication to premium supplies, we deliver excellence in aluminum craftsmanship</p>
+     <div class="cta-buttons"><a href="#contact" class="btn btn-primary">Get a Quote</a> <a href="#services" class="btn btn-secondary">Our Services</a>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section class="about" id="about">
+    <div class="about-container">
+     <div class="about-content">
+      <h3 id="about-title">Leading Aluminum Specialists</h3>
+      <p id="about-description">With over 25 years of experience, we are your trusted partner for all aluminum needs. From architectural projects to custom fabrication, our skilled team delivers superior quality and precision in every project we undertake.</p>
+      <div class="stats">
+       <div class="stat-item">
+        <h4>10+</h4>
+        <p>Years Experience</p>
+       </div>
+       <div class="stat-item">
+        <h4>5000+</h4>
+        <p>Projects Completed</p>
+       </div>
+       <div class="stat-item">
+        <h4>100%</h4>
+        <p>Client Satisfaction</p>
+       </div>
+      </div>
+     </div>
+     <div class="about-image"><span><img class="about-image" src="img/Aluminum14_img.jpg" alt=""></span>
+     </div>
+    </div>
+   </section><!-- Services Section -->
+   <section class="services" id="services">
+    <h3 class="section-title" id="services-title">Our Professional Services</h3>
+    <div class="services-grid">
+     <div class="service-card">
+      <div class="service-icon">
+       🏗️
+      </div>
+      <h4>Custom Fabrication</h4>
+      <p>Precision-engineered aluminum fabrication tailored to your exact specifications and requirements.</p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       🪟
+      </div>
+      <h4>Windows &amp; Doors</h4>
+      <p>High-quality aluminum windows and doors installation with superior insulation and durability.</p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       🏢
+      </div>
+      <h4>Commercial Projects</h4>
+      <p>Large-scale commercial aluminum solutions including curtain walls and structural glazing.</p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       🏠
+      </div>
+      <h4>Residential Work</h4>
+      <p>Beautiful residential aluminum solutions including railings, balconies, and pergolas.</p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       📦
+      </div>
+      <h4>Aluminum Supplies</h4>
+      <p>Premium aluminum materials and supplies for contractors and DIY enthusiasts.</p>
+     </div>
+     <div class="service-card">
+      <div class="service-icon">
+       🔧
+      </div>
+      <h4>Repair &amp; Maintenance</h4>
+      <p>Expert repair and maintenance services to keep your aluminum installations in perfect condition.</p>
+     </div>
+    </div>
+   </section><!-- Gallery Section -->
+   <section class="gallery" id="gallery">
+    <h3 class="section-title">Our Work Portfolio</h3>
+    <div class="gallery-grid">
+     <div class="gallery-item"><span><img src="img/Aluminum3_img.jpg" alt=""></span>
+     </div>
+     <div class="gallery-item"><span><img class="gallery-item" src="img/Aluminum16_img.jpg" width="400" alt=""></span>
+     </div>
+     <div class="gallery-item"><span><img src="img/Aluminum9_img.jpg" alt=""></span>
+     </div>
+     <div class="gallery-item"><span><img class="gallery-item" src="img/Aluminum15_img.jpg" alt=""></span>
+     </div>
+     <div class="gallery-item"><span><img src="img/Aluminum5_img.jpg" alt=""></span>
+     </div>
+     <div class="gallery-item"><span><img class="gallery-item" src="img/Aluminum6_img.jpg" alt=""></span>
+     </div>
+     <div class="gallery-item"><span><img src="img/Aluminum_img.jpg" alt=""></span>
+     </div>
+     <div class="gallery-item"><span><img class="gallery-item" src="img/Aluminum17_img.jpg" width="400" alt=""></span>
+     </div>
+
+     <div class="gallery-item"><span><img class="gallery-item" src="img/Aluminum18_img.jpg" alt=""></span>
+     </div>
+
+     <div class="gallery-item"><span><img class="gallery-item" src="img/Aluminum19_img.jpg" width="400" alt=""></span>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section class="contact" id="contact">
+    <h3 class="section-title" id="contact-title">Get In Touch</h3>
+    <div class="contact-container">
+     <div class="contact-info">
+      <h4>Contact Information</h4>
+      <div class="info-item">
+       <div class="info-icon">
+        📍
+       </div>
+
+       <div class="info-text">
+        <h5>Visit Our Shop</h5>
+        <p id="shop-address">Gassol lga Mutum Biyu Old Orange market, Taraba state.</p>
+       </div>
+      </div>
+
+      <div class="info-item">
+       <div class="info-icon">
+        📞
+       </div>
+       <div class="info-text">
+        <h5>Call Us</h5>
+        <p id="phone-number">+234 814 258 8852</p>
+       </div>
+      </div>
+
+      <div class="info-item">
+       <div class="info-icon">
+        <img src="img/whatsapp-icon.png" width="30" height="30" alt="">
+       </div>
+       <div class="info-text">
+        <h5>Or whatsapp 👇</h5>
+        <a href="https://wa.link/q49iwb">Click here to reach out on whatsapp</a>
+       </div>
+      </div>
+
+      <div class="info-item">
+       <div class="info-icon">
+        ✉️
+       </div>
+       <div class="info-text">
+        <h5>Email Us</h5>
+        <p id="email-address">info@aluminumworks.com</p>
+       </div>
+      </div>
+      
+      <div class="info-item">
+       <div class="info-icon">
+        🕒
+       </div>
+       <div class="info-text">
+        <h5>Business Hours</h5>
+        <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
+         Saturday: 9:00 AM - 4:00 PM<br>
+         Sunday: Closed</p>
+       </div>
+      </div>
+     </div>
+
+
+     <div class="contact-form">
+      <div class="form-message" id="form-message"></div>
+      <form id="contact-form">
+       <div class="form-group"><label for="name">Full Name *</label> <input type="text" id="name" name="name" required>
+       </div>
+       <div class="form-group"><label for="email">Email Address *</label> <input type="email" id="email" name="email" required>
+       </div>
+       <div class="form-group"><label for="phone">Phone Number</label> <input type="tel" id="phone" name="phone">
+       </div>
+       <div class="form-group"><label for="subject">Subject *</label> <input type="text" id="subject" name="subject" required>
+       </div>
+       <div class="form-group"><label for="message">Your Message *</label> <textarea id="message" name="message" required></textarea>
+       </div><button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+      </form>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer>
+    <div class="footer-content">
+     <div class="footer-section">
+      <h4>About Us</h4>
+      <p>We are the leading aluminum fabrication and supply company, committed to delivering exceptional quality and service to our clients.</p>
+      <div class="social-links"><a href="https://www.facebook.com/share/r/1JfM1X1NEH/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img class="media_icon" src="img/facebook_icon.png" alt=""></a>
+        
+        <a href="https://wa.link/q49iwb" target="_blank" rel="noopener noreferrer" aria-label="whatsapp"><img class="media_icon" src="img/whatsapp-icon.png" alt="whatsapp image"></a> 
       
       </div>
      </div>
